@@ -46,6 +46,7 @@ jobs:
         run: pnpm run build
         env:
           DEPLOY_TARGET: github-pages
+          NEXT_PUBLIC_BASE_PATH: /the-little-room
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
