@@ -3,14 +3,16 @@
 import { Clone, useGLTF } from "@react-three/drei";
 import type { ThreeElements } from "@react-three/fiber";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const modelUrls = {
-  displayCabinet: "/models/bakery/display-cabinet.glb",
-  sideShelf: "/models/bakery/side-shelf.glb",
-  cafeSet: "/models/bakery/cafe-set.glb",
-  props: "/models/bakery/bakery-props.glb",
-  interactiveCake: "/models/bakery/interactive-cake.glb",
-  hamster: "/models/bakery/hamster.glb",
-  roomDecor: "/models/bakery/room-decor.glb",
+  displayCabinet: `${basePath}/models/bakery/display-cabinet.glb`,
+  sideShelf: `${basePath}/models/bakery/side-shelf.glb`,
+  cafeSet: `${basePath}/models/bakery/cafe-set.glb`,
+  props: `${basePath}/models/bakery/bakery-props.glb`,
+  interactiveCake: `${basePath}/models/bakery/interactive-cake.glb`,
+  hamster: `${basePath}/models/bakery/hamster.glb`,
+  roomDecor: `${basePath}/models/bakery/room-decor.glb`,
 } as const;
 
 type GroupProps = ThreeElements["group"];

@@ -10,7 +10,7 @@ The project focuses on gentle interaction, spatial storytelling, and a soft toy-
 
 ## Demo
 
-Vercel URL: _To be added after deployment._
+[Open the live demo on GitHub Pages](https://chaichai009.github.io/the-little-room/)
 
 ## Features
 
@@ -58,14 +58,10 @@ pnpm run validate:3d
 pnpm run build
 ```
 
-The 3D assets used by the site are stored in `public/models/bakery/` and are served from `/models/bakery/` at runtime.
+The 3D assets used by the site are stored in `public/models/bakery/`. Their runtime URLs automatically include the configured deployment base path.
 
 ## Deployment
 
-The project uses the standard Next.js build output and is ready to import into Vercel with:
+The site is deployed to GitHub Pages by the workflow in `.github/workflows/deploy-pages.yml`. Pushes to `main` validate the GLB assets, create a Next.js static export, and publish the generated `out/` directory.
 
-- Framework preset: **Next.js**
-- Install command: **pnpm install**
-- Build command: **pnpm run build**
-- Output directory: **Next.js default**
-
+Normal local builds keep the standard Next.js output. The GitHub Pages workflow enables the repository base path and static export only for the deployment build.
